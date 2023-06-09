@@ -1,0 +1,353 @@
+<div id="app-hr" class="view-wrapper view-wrapper-full is-pushed-block" [ngClass]="isPushed" data-mobile-item="#home-sidebar-menu-mobile" data-sidebar-open>
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+    
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-block" data-sidebar="sidebar-block">
+                    <span class="menu-toggle has-chevron">
+                    <span class="icon-box-toggle" [ngClass]="activeToggle" (click)="activeHomeSider()">
+                        <span class="rotate">
+                            <i class="icon-line-top"></i>
+                            <i class="icon-line-center"></i>
+                            <i class="icon-line-bottom"></i>
+                        </span>
+                    </span>
+                    </span>
+                </div>
+    
+                <div class="title-wrap">
+                    <h1 class="title is-4">Create a user</h1>
+                </div>
+            </div>
+    
+            <div class="page-content-inner">
+
+                <!--Edit Profile-->
+                <div class="account-wrapper">
+                    <div class="columns">
+
+                        <!--Navigation-->
+                        <!-- <div class="column is-4">
+                            <div class="account-box is-navigation">
+                                <div class="media-flex-center">
+                                    <div class="h-avatar is-large">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                        <img class="badge" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                    </div>
+                                    <div class="flex-meta">
+                                        <span>Erik Kovalsky</span>
+                                        <span>product Manager</span>
+                                    </div>
+                                </div>
+
+                                <div class="account-menu">
+                                    <a href="/webapp-profile-edit-1.html" class="account-menu-item is-active">
+                                        <i class="lnil lnil-user-alt"></i>
+                                        <span>General</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/webapp-profile-edit-2.html" class="account-menu-item">
+                                        <i class="lnil lnil-crown-alt"></i>
+                                        <span>Experience</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/webapp-profile-edit-3.html" class="account-menu-item">
+                                        <i class="lnil lnil-quill"></i>
+                                        <span>Skills</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/webapp-profile-edit-4.html" class="account-menu-item">
+                                        <i class="lnil lnil-cog"></i>
+                                        <span>Settings</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!--Form-->
+                        <div class="column is-8">
+                            <div class="account-box is-form is-footerless">
+                                <div class="form-head stuck-header">
+                                    <div class="form-head-inner">
+                                        <div class="left">
+                                            <h3>General Info</h3>
+                                            <p>Edit user account's general information</p>
+                                        </div>
+                                        <div class="right">
+                                            <div class="buttons">
+                                                <a class="button h-button is-light is-dark-outlined">
+                                                    <span class="icon">
+                                                        <i class="lnir lnir-arrow-left rem-100"></i>
+                                                    </span>
+                                                    <span>Go Back</span>
+                                                </a>
+                                                <button id="save-button" class="button h-button is-primary is-raised">Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-body">
+                                    <!--Fieldset-->
+                                    <div class="fieldset">
+                                        <div class="fieldset-heading">
+                                            <h4>Profile Picture</h4>
+                                            <p>This is how others will recognize the user</p>
+                                        </div>
+                                        
+                                        <div class="h-avatar profile-h-avatar is-xl">
+                                            <img class="avatar" [ngClass]="activeAvatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                            <div class="filepond-profile-wrap" [ngClass]="activeFileInput" >
+                                                <input type="file" class="profile-filepond" name="profile_filepond"
+                                                accept="image/png, image/jpeg, image/gif">
+                                            </div>
+                                            <button class="button is-circle edit-button is-edit" (click)="onEditPicture()" [ngClass]="activeFileEdit">
+                                                <span class="icon is-small">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">
+                                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                            <button class="button is-circle edit-button is-back" (click)="onBackPicture()" [ngClass]="activeFileBack">
+                                                <span class="icon is-small">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+                                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--Fieldset-->
+                                    <div class="fieldset">
+                                        <div class="fieldset-heading">
+                                            <h4>Personal Info</h4>
+                                            <p>Others diserve to know you more</p>
+                                        </div>
+                                        
+                                        <div class="columns is-multiline">
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="First Name">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                                <circle cx="12" cy="7" r="4"></circle>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Last Name">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                                <circle cx="12" cy="7" r="4"></circle>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Date of birth">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Gender">
+                                                        <div class="form-icon">
+                                                            <i data-feather="user"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Email">
+                                                        <div class="form-icon">
+                                                            <svg _ngcontent-vrd-c1="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                                                                <path _ngcontent-vrd-c1="" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                                <polyline _ngcontent-vrd-c1="" points="22,6 12,13 2,6"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Role">
+                                                        <div class="form-icon">
+                                                            <i data-feather="briefcase"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Profession">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase">
+                                                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Telephone">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                                                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Address">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                                <circle cx="12" cy="10" r="3"></circle>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Nationality">
+                                                        <div class="form-icon">
+                                                            <i data-feather="map-pin"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Security Number">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield">
+                                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Passport/ID Number">
+                                                        <div class="form-icon">
+                                                            <i data-feather="map-pin"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Validity Date">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Expiration Date">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <!-- <div class="column is-12">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <textarea class="textarea" rows="4" placeholder="About / Bio"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+    </div>
+    
+    

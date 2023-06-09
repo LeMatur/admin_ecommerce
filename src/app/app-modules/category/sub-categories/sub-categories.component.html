@@ -1,0 +1,311 @@
+<div id="app-hr" class="view-wrapper view-wrapper-full" [ngClass]="isPushed" data-mobile-item="#home-sidebar-menu-mobile" data-sidebar-open>
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+    
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-block" data-sidebar="sidebar-block">
+                    <span class="menu-toggle has-chevron">
+                    <span class="icon-box-toggle" [ngClass]="activeToggle" (click)="activeHomeSider()">
+                        <span class="rotate">
+                            <i class="icon-line-top"></i>
+                            <i class="icon-line-center"></i>
+                            <i class="icon-line-bottom"></i>
+                        </span>
+                    </span>
+                    </span>
+                </div>
+    
+                <div class="title-wrap">
+                    <h1 class="title is-4">Sub-Categories</h1>
+                </div>
+            </div>
+    
+            <div class="list-flex-toolbar flex-list-v1">
+                <div class="control has-icon">
+                    <input class="input custom-text-filter" placeholder="Search..."
+                        data-filter-target=".flex-table-item">
+                    <div class="form-icon">
+                        <i data-feather="search"></i>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="button h-button is-primary is-elevated" (click)="onOpenCreateModal()">
+                        <span class="icon">
+                            <i aria-hidden="true" class="fas fa-plus"></i>
+                        </span>
+                        <span>Add Sub-Category</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="page-content-inner">
+
+                <div class="flex-list-wrapper flex-list-v1">
+
+                    <!--List Empty Search Placeholder -->
+                    <div class="page-placeholder custom-text-filter-placeholder is-hidden">
+                        <div class="placeholder-content">
+                            <img class="light-image" src="assets/img/illustrations/placeholders/search-4.svg" alt="" />
+                            <img class="dark-image" src="assets/img/illustrations/placeholders/search-4-dark.svg"
+                                alt="" />
+                            <h3>We couldn't find any matching results.</h3>
+                            <p class="is-larger">Too bad. Looks like we couldn't find any matching results for the
+                                search terms you've entered. Please try different search terms or criteria.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-table">
+
+                        <!--Table header-->
+                        <div class="flex-table-header" data-filter-hide>
+                            <span class="is-grow">Category</span>
+                            <span>Status</span>
+                            <span>Products</span>
+                            <span class="cell-end">Actions</span>
+                        </div>
+
+                        <div class="flex-list-inner">
+                            <!--Table item-->
+                            <div class="flex-table-item">
+                                <div class="flex-table-cell is-media is-grow">
+                                    <div class="h-avatar is-medium">
+                                        <img class="avatar is-squared" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
+                                            data-user-popover="3">
+                                    </div>
+                                    <div>
+                                        <span class="item-name dark-inverted" data-filter-match>Jacket</span>
+                                        <span class="item-meta">
+                                            <span data-filter-match>Nice protection against cold</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-table-cell" data-th="Status">
+                                    <span class="tag is-success is-rounded" data-filter-match>Active</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Products">
+                                    <div class="avatar-stack is-pushed-mobile">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/7.jpg" alt=""
+                                                data-user-popover="0">
+                                        </div>
+                                        <div class="h-avatar is-small">
+                                            <span class="avatar is-fake is-info" data-user-popover="34">
+                                                <span>JD</span>
+                                            </span>
+                                        </div>
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/27.jpg" alt=""
+                                                data-user-popover="10">
+                                        </div>
+                                        <div class="h-avatar is-small">
+                                            <span class="avatar is-more">
+                                                <span class="inner">
+                                                    <span>+2</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-table-cell cell-end" data-th="Actions">
+                                    <div class="dropdown is-spaced is-dots is-right dropdown-trigger is-pushed-mobile" (click)="onActiveAction()" [ngClass]="activeAction">
+                                        <div class="is-trigger" aria-haspopup="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="12" cy="5" r="1"></circle>
+                                                <circle cx="12" cy="19" r="1"></circle>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu" role="menu">
+                                            <div class="dropdown-content">
+                                                <a href="#" class="dropdown-item is-media">
+                                                    <div class="icon">
+                                                        <i class="lnil lnil-eye"></i>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span>View</span>
+                                                        <span>View user details</span>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="dropdown-item is-media">
+                                                    <div class="icon">
+                                                        <i class="lnil lnil-briefcase"></i>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span>Projects</span>
+                                                        <span>View user projects</span>
+                                                    </div>
+                                                </a>
+                                                <hr class="dropdown-divider">
+                                                <a href="#" class="dropdown-item is-media">
+                                                    <div class="icon">
+                                                        <i class="lnil lnil-trash-can-alt"></i>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span>Remove</span>
+                                                        <span>Remove from list</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--Infinite Loader-->
+                    <div class="infinite-scroll-loader" data-filter-hide>
+                        <div class="infinite-scroll-loader-inner">
+                            <div class="loader is-loading"></div>
+                            <div class="loader-end is-hidden">
+                                <span>No more items to load</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+</div>
+    
+<!-- add sub-category -->
+<div id="createSubCategory" class="modal h-modal" [ngClass]="openCreateSubCategoryModal">
+    <div class="modal-background h-modal-close"></div>
+    <div class="modal-content">
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <h3>New Sub-Category</h3>
+                <button class="h-modal-close ml-auto" aria-label="close" (click)="closeCreateSubCategoryModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-x">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+            <div class="modal-card-body">
+                <div class="inner-content">
+                    <form class="modal-form" [formGroup]="createSubCategoryForm" (ngSubmit)="onCreateSubCategory()">
+                        <div class="field">
+                            <label>Image *</label>
+                            <div class="control">
+                                <input type="file" class="profile-filepond" name="profile_filepond" formControlName="img"
+                                accept="image/png, image/jpeg, image/gif">
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="createSubCategoryForm.get('img')?.errors?.['required'] && createSubCategoryForm.get('img')?.touched">
+                                <small class="text-police">Please choose an image</small>
+                            </div>
+                        </div><br>
+
+                        <div class="field">
+                            <label>Name *</label><br>
+                            <div class="control">
+                                <input type="text" class="input" placeholder="Category's name" formControlName="name">
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="createSubCategoryForm.get('name')?.errors?.['required'] && createSubCategoryForm.get('name')?.touched">
+                                <small class="text-police">Please enter a name</small>
+                            </div>
+                        </div><br>
+
+                        <div class="field">
+                            <label>Description *</label><br>
+                            <div class="control">
+                                <input type="text" class="input" placeholder="Category's description" formControlName="description">
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="createSubCategoryForm.get('description')?.errors?.['required'] && createSubCategoryForm.get('description')?.touched">
+                                <small class="text-police">Please enter a description</small>
+                            </div>
+                        </div><br><br>
+                       
+                        <div class="control login">
+                            <button class="button h-button is-primary is-bold is-fullwidth is-raised" [disabled]="createSubCategoryForm.invalid || isSaving" >Create</button>
+                        </div><br>
+                       
+                    </form>
+                </div>
+            </div>
+            <div class="modal-card-foot is-end">
+                <a class="button h-button is-rounded h-modal-close" (click)="closeCreateSubCategoryModal()">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- update sub-category -->
+<div id="updateSubCategory" class="modal h-modal" [ngClass]="openUpdateSubCategoryModal">
+    <div class="modal-background h-modal-close"></div>
+    <div class="modal-content">
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <h3>Update Sub-Category</h3>
+                <button class="h-modal-close ml-auto" aria-label="close" (click)="closeUpdateSubCategoryModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-x">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+            <div class="modal-card-body">
+                <div class="inner-content">
+                    <form class="modal-form" [formGroup]="updateSubCategoryForm" (ngSubmit)="onUpdateSubCategory()">
+                        <div class="field">
+                            <label>Image *</label>
+                            <div class="control">
+                                <input type="file" class="profile-filepond" name="profile_filepond" formControlName="img"
+                                accept="image/png, image/jpeg, image/gif">
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="updateSubCategoryForm.get('img')?.errors?.['required'] && updateSubCategoryForm.get('img')?.touched">
+                                <small class="text-police">Please choose an image</small>
+                            </div><br>
+                        </div>
+
+                        <div class="field">
+                            <label>Name *</label><br>
+                            <div class="control">
+                                <input type="text" class="input" placeholder="Category's name" formControlName="name">
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="updateSubCategoryForm.get('name')?.errors?.['required'] && updateSubCategoryForm.get('name')?.touched">
+                                <small class="text-police">Please enter a name</small>
+                            </div><br>
+                        </div><br>
+
+                        <div class="field">
+                            <label>Description *</label><br>
+                            <div class="control">
+                                <input type="text" class="input" placeholder="Category's description" formControlName="description">
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="updateSubCategoryForm.get('description')?.errors?.['required'] && updateSubCategoryForm.get('description')?.touched">
+                                <small class="text-police">Please enter a description</small>
+                            </div><br>
+                        </div><br>
+                       
+                        <div class="control login">
+                            <button class="button h-button is-primary is-bold is-fullwidth is-raised" [disabled]="updateSubCategoryForm.invalid || isSaving" >Update</button>
+                        </div><br>
+                       
+                    </form>
+                </div>
+            </div>
+            <div class="modal-card-foot is-end">
+                <a class="button h-button is-rounded h-modal-close" (click)="closeUpdateSubCategoryModal()">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>

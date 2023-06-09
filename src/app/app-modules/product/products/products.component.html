@@ -1,0 +1,244 @@
+<div id="app-hr" class="view-wrapper view-wrapper-full" [ngClass]="isPushed" data-mobile-item="#home-sidebar-menu-mobile" data-sidebar-open>
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+    
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-block" data-sidebar="sidebar-block">
+                    <span class="menu-toggle has-chevron">
+                    <span class="icon-box-toggle" [ngClass]="activeToggle" (click)="activeHomeSider()">
+                        <span class="rotate">
+                            <i class="icon-line-top"></i>
+                            <i class="icon-line-center"></i>
+                            <i class="icon-line-bottom"></i>
+                        </span>
+                    </span>
+                    </span>
+                </div>
+    
+                <div class="title-wrap">
+                    <h1 class="title is-4">Products</h1>
+                </div>
+            </div>
+    
+            <div class="list-flex-toolbar flex-list-v1">
+                <div class="control has-icon">
+                    <input class="input custom-text-filter" placeholder="Search..."
+                        data-filter-target=".flex-table-item">
+                    <div class="form-icon">
+                        <i data-feather="search"></i>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="button h-button is-primary is-elevated" [routerLink]="['/create-product/']">
+                        <span class="icon">
+                            <i aria-hidden="true" class="fas fa-plus"></i>
+                        </span>
+                        <span>Add Product</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="page-content-inner">
+
+                <div class="flex-list-wrapper flex-list-v1">
+
+                    <!--List Empty Search Placeholder -->
+                    <div class="page-placeholder custom-text-filter-placeholder is-hidden">
+                        <div class="placeholder-content">
+                            <img class="light-image" src="assets/img/illustrations/placeholders/search-4.svg" alt="" />
+                            <img class="dark-image" src="assets/img/illustrations/placeholders/search-4-dark.svg"
+                                alt="" />
+                            <h3>We couldn't find any matching results.</h3>
+                            <p class="is-larger">Too bad. Looks like we couldn't find any matching results for the
+                                search terms you've entered. Please try different search terms or criteria.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-table">
+
+                        <!--Table header-->
+                        <div class="flex-table-header" data-filter-hide>
+                            <span class="is-grow">Product</span>
+                            <span>Category</span>
+                            <span>Stock</span>
+                            <span>Shop</span>
+                            <span>Status</span>
+                            <span class="cell-end">Actions</span>
+                        </div>
+
+                        <div class="flex-list-inner">
+                            <!--Table item-->
+                            <div class="flex-table-item">
+                                <div class="flex-table-cell is-media is-grow">
+                                    <div class="h-avatar is-medium">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
+                                            data-user-popover="3">
+                                    </div>
+                                    <div>
+                                        <span class="item-name dark-inverted" data-filter-match>iPhone 13 Pro Max</span>
+                                        <span class="item-meta">
+                                            <span data-filter-match>1930460</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-table-cell" data-th="Category">
+                                    <span class="light-text" data-filter-match>Telephone</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Stock">
+                                    <span class="light-text" data-filter-match>12</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Shop">
+                                    <span class="light-text" data-filter-match>Apple Store</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Status">
+                                    <span class="tag is-success is-rounded" data-filter-match>Active</span>
+                                </div>
+                                <div class="flex-table-cell cell-end" data-th="Actions">
+                                    <div class="dropdown is-spaced is-dots is-right dropdown-trigger is-pushed-mobile" (click)="onActiveAction()" [ngClass]="activeAction">
+                                        <div class="is-trigger" aria-haspopup="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="12" cy="5" r="1"></circle>
+                                                <circle cx="12" cy="19" r="1"></circle>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu" role="menu">
+                                            <div class="dropdown-content">
+                                                <a href="#" class="dropdown-item is-media">
+                                                    <div class="icon">
+                                                        <i class="lnil lnil-eye"></i>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span>View</span>
+                                                        <span>View user details</span>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="dropdown-item is-media">
+                                                    <div class="icon">
+                                                        <i class="lnil lnil-briefcase"></i>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span>Projects</span>
+                                                        <span>View user projects</span>
+                                                    </div>
+                                                </a>
+                                                <hr class="dropdown-divider">
+                                                <a href="#" class="dropdown-item is-media">
+                                                    <div class="icon">
+                                                        <i class="lnil lnil-trash-can-alt"></i>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span>Remove</span>
+                                                        <span>Remove from list</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Table item-->
+                            <div class="flex-table-item">
+                                <div class="flex-table-cell is-media is-grow">
+                                    <div class="h-avatar is-medium">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/22.jpg" alt=""
+                                            data-user-popover="5">
+                                    </div>
+                                    <div>
+                                        <span class="item-name dark-inverted" data-filter-match>Air Jordan 99</span>
+                                        <span class="item-meta">
+                                            <span data-filter-match>WE4506089</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-table-cell" data-th="Category">
+                                    <span class="light-text" data-filter-match>Sneakers</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Stock">
+                                    <span class="light-text" data-filter-match>8</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Shop">
+                                    <span class="light-text" data-filter-match>Sneakers 237</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Status">
+                                    <span class="tag is-rounded" data-filter-match>Disabled</span>
+                                </div>
+                                <div class="flex-table-cell cell-end" data-th="Actions">
+                                    <div class="dropdown is-spaced is-dots is-right dropdown-trigger is-pushed-mobile is-active">
+                                        <div class="is-trigger" aria-haspopup="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="12" cy="5" r="1"></circle>
+                                                <circle cx="12" cy="19" r="1"></circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Table item-->
+                            <div class="flex-table-item">
+                                <div class="flex-table-cell is-media is-grow">
+                                    <div class="h-avatar is-medium">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/13.jpg" alt=""
+                                            data-user-popover="6">
+                                    </div>
+                                    <div>
+                                        <span class="item-name dark-inverted" data-filter-match>Rolex 2024</span>
+                                        <span class="item-meta">
+                                            <span data-filter-match>rolex999</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-table-cell" data-th="Category">
+                                    <span class="light-text" data-filter-match>Accessories</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Stock">
+                                    <span class="light-text" data-filter-match>1</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Shop">
+                                    <span class="light-text" data-filter-match>Rolex De Lux</span>
+                                </div>
+                                <div class="flex-table-cell" data-th="Status">
+                                    <span class="tag is-info is-rounded" data-filter-match>Promoting</span>
+                                </div>
+                                <div class="flex-table-cell cell-end" data-th="Actions">
+                                    <div class="dropdown is-spaced is-dots is-right dropdown-trigger is-pushed-mobile is-active">
+                                        <div class="is-trigger" aria-haspopup="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="12" cy="5" r="1"></circle>
+                                                <circle cx="12" cy="19" r="1"></circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--Infinite Loader-->
+                    <div class="infinite-scroll-loader" data-filter-hide>
+                        <div class="infinite-scroll-loader-inner">
+                            <div class="loader is-loading"></div>
+                            <div class="loader-end is-hidden">
+                                <span>No more items to load</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+    </div>
+    
+    

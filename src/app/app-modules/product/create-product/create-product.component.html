@@ -1,0 +1,334 @@
+<div id="app-hr" class="view-wrapper view-wrapper-full is-pushed-block" [ngClass]="isPushed" data-mobile-item="#home-sidebar-menu-mobile" data-sidebar-open>
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+    
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-block" data-sidebar="sidebar-block">
+                    <span class="menu-toggle has-chevron">
+                    <span class="icon-box-toggle" [ngClass]="activeToggle" (click)="activeHomeSider()">
+                        <span class="rotate">
+                            <i class="icon-line-top"></i>
+                            <i class="icon-line-center"></i>
+                            <i class="icon-line-bottom"></i>
+                        </span>
+                    </span>
+                    </span>
+                </div>
+    
+                <div class="title-wrap">
+                    <h1 class="title is-4">Create a product</h1>
+                </div>
+            </div>
+    
+            <div class="page-content-inner">
+
+                <!--Edit Profile-->
+                <div class="account-wrapper">
+                    <div class="columns">
+
+                        <!--Navigation-->
+                        <!-- <div class="column is-4">
+                            <div class="account-box is-navigation">
+                                <div class="media-flex-center">
+                                    <div class="h-avatar is-large">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                        <img class="badge" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                    </div>
+                                    <div class="flex-meta">
+                                        <span>Erik Kovalsky</span>
+                                        <span>product Manager</span>
+                                    </div>
+                                </div>
+
+                                <div class="account-menu">
+                                    <a href="/webapp-profile-edit-1.html" class="account-menu-item is-active">
+                                        <i class="lnil lnil-user-alt"></i>
+                                        <span>General</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/webapp-profile-edit-2.html" class="account-menu-item">
+                                        <i class="lnil lnil-crown-alt"></i>
+                                        <span>Experience</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/webapp-profile-edit-3.html" class="account-menu-item">
+                                        <i class="lnil lnil-quill"></i>
+                                        <span>Skills</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/webapp-profile-edit-4.html" class="account-menu-item">
+                                        <i class="lnil lnil-cog"></i>
+                                        <span>Settings</span>
+                                        <span class="end">
+                                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!--Form-->
+                        <div class="column is-8">
+                            <div class="account-box is-form is-footerless">
+                                <div class="form-head stuck-header">
+                                    <div class="form-head-inner">
+                                        <div class="left">
+                                            <h3>General Info</h3>
+                                            <p>Edit product's general information</p>
+                                        </div>
+                                        <div class="right">
+                                            <div class="buttons">
+                                                <a class="button h-button is-light is-dark-outlined">
+                                                    <span class="icon">
+                                                        <i class="lnir lnir-arrow-left rem-100"></i>
+                                                    </span>
+                                                    <span>Go Back</span>
+                                                </a>
+                                                <button id="save-button" class="button h-button is-primary is-raised">Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-body">
+                                    <!--Fieldset-->
+                                    <div class="fieldset">
+                                        <div class="fieldset-heading">
+                                            <h4>Product Pictures</h4>
+                                            <p>This is how others will recognize the product</p>
+                                        </div>
+                                        
+                                        <div class="h-avatar profile-h-avatar is-xl">
+                                            <img class="avatar" [ngClass]="activeAvatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                            <div class="filepond-profile-wrap" [ngClass]="activeFileInput" >
+                                                <input type="file" class="profile-filepond" name="profile_filepond"
+                                                accept="image/png, image/jpeg, image/gif">
+                                            </div>
+                                            <button class="button is-circle edit-button is-edit" (click)="onEditPicture()" [ngClass]="activeFileEdit">
+                                                <span class="icon is-small">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">
+                                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                            <button class="button is-circle edit-button is-back" (click)="onBackPicture()" [ngClass]="activeFileBack">
+                                                <span class="icon is-small">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+                                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="h-avatar profile-h-avatar is-xl">
+                                            <img class="avatar" [ngClass]="activeAvatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                            <div class="filepond-profile-wrap" [ngClass]="activeFileInput" >
+                                                <input type="file" class="profile-filepond" name="profile_filepond"
+                                                accept="image/png, image/jpeg, image/gif">
+                                            </div>
+                                            <button class="button is-circle edit-button is-edit" (click)="onEditPicture()" [ngClass]="activeFileEdit">
+                                                <span class="icon is-small">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">
+                                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                            <button class="button is-circle edit-button is-back" (click)="onBackPicture()" [ngClass]="activeFileBack">
+                                                <span class="icon is-small">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+                                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div> <br>
+
+                                        <div class="columns is-multiline">
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>Add To Existing Product *</label><br>
+                                                    <div class="control">
+                                                        <select class="h-select" formControlName="product" aria-label="Default select example">
+                                                            <option value="1" disabled>--Select Product--</option>
+                                                            <option value="2">iPhone 13 Pro</option>
+                                                            <option value="3">Air Jordan</option>
+                                                            <option value="4">Mirror</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="control">
+                                                    <div class="h-select">
+                                                        <div class="select-box">
+                                                            <span>Select a Hero</span>
+                                                        </div>
+                                                        <div class="select-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                                        </div>
+                                                        <div class="select-drop has-slimscroll-sm">
+                                                            <div class="drop-inner">
+                                                                <div class="option-row">
+                                                                    <input type="radio" name="hero_select">
+                                                                    <div class="option-meta">
+                                                                        <span>Superman</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="option-row">
+                                                                    <input type="radio" name="hero_select">
+                                                                    <div class="option-meta">
+                                                                        <span>Batman</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="option-row">
+                                                                    <input type="radio" name="hero_select">
+                                                                    <div class="option-meta">
+                                                                        <span>Deadpool</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="option-row">
+                                                                    <input type="radio" name="hero_select">
+                                                                    <div class="option-meta">
+                                                                        <span>Spawn</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="option-row">
+                                                                    <input type="radio" name="hero_select">
+                                                                    <div class="option-meta">
+                                                                        <span>Galactus</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>Select a Category *</label><br>
+                                                    <div class="control">
+                                                        <select class="" formControlName="product" aria-label="Default select example">
+                                                            <option value="1" disabled>--Select a Category--</option>
+                                                            <option value="2">MEN</option>
+                                                            <option value="3">Electronic</option>
+                                                            <option value="4">Household</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Fieldset-->
+                                    <div class="fieldset">
+                                        <div class="fieldset-heading">
+                                            <h4>Product Basic Info</h4>
+                                            <p>Others diserve to know you more</p>
+                                        </div>
+                                        
+                                        <div class="columns is-multiline">
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>Select the vendor *</label><br>
+                                                    <div class="control">
+                                                        <select class="" formControlName="product" aria-label="Default select example">
+                                                            <option value="1" disabled>--Select a Vendor--</option>
+                                                            <option value="2">Santa Lucia</option>
+                                                            <option value="3">Carrefour</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>Name *</label><br>
+                                                    <div class="control">
+                                                        <input type="text" class="input" placeholder="Product's Name" formControlName="name">
+                                                    </div>
+                                                    <!-- <div class="text-danger"
+                                                        *ngIf="createMutualInvestmentForm.get('name')?.errors?.['required'] && createMutualInvestmentForm.get('name')?.touched">
+                                                        <small class="text-police">veuillez entrer le nom du placement mutualisé</small>
+                                                     </div> -->
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>Description *</label><br>
+                                                    <div class="control">
+                                                        <textarea class="textarea" rows="3" placeholder="About / Bio"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>Brand</label><br>
+                                                    <div class="control">
+                                                        <input type="text" class="input" placeholder="Product's Brand" formControlName="name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>SKU *</label><br>
+                                                    <div class="control">
+                                                        <input type="text" class="input" placeholder="Product's SKU" formControlName="name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-12">
+                                                <div class="field">
+                                                    <label>Discount(%) *</label><br>
+                                                    <div class="control">
+                                                        <input type="number" class="input" placeholder="0" formControlName="name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Date of birth">
+                                                        <div class="form-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+    </div>
+    
+    

@@ -65,7 +65,7 @@
                             <span>Profession</span>
                             <span>Role</span>
                             <span>Status</span>
-                            <span>Relations</span>
+                            <span>Orders</span>
                             <span class="cell-end">Actions</span>
                         </div>
 
@@ -94,12 +94,12 @@
                                     <span class="light-text" data-filter-match>Project Manage</span>
                                 </div>
                                 <div class="flex-table-cell" data-th="Role">
-                                    <span class="light-text" data-filter-match>Normal</span>
+                                    <span class="light-text" data-filter-match>VIP</span>
                                 </div>
                                 <div class="flex-table-cell" data-th="Status">
                                     <span class="tag is-success is-rounded" data-filter-match>Online</span>
                                 </div>
-                                <div class="flex-table-cell" data-th="Relations">
+                                <div class="flex-table-cell" data-th="Orders">
                                     <div class="avatar-stack is-pushed-mobile">
                                         <div class="h-avatar is-small">
                                             <img class="avatar" src="https://via.placeholder.com/150x150"
@@ -136,22 +136,13 @@
                                         </div>
                                         <div class="dropdown-menu" role="menu">
                                             <div class="dropdown-content">
-                                                <a href="#" class="dropdown-item is-media">
+                                                <a class="dropdown-item is-media" [routerLink]="['/user-profile/']">
                                                     <div class="icon">
                                                         <i class="lnil lnil-eye"></i>
                                                     </div>
                                                     <div class="meta">
                                                         <span>View</span>
                                                         <span>View user details</span>
-                                                    </div>
-                                                </a>
-                                                <a href="#" class="dropdown-item is-media">
-                                                    <div class="icon">
-                                                        <i class="lnil lnil-briefcase"></i>
-                                                    </div>
-                                                    <div class="meta">
-                                                        <span>Projects</span>
-                                                        <span>View user projects</span>
                                                     </div>
                                                 </a>
                                                 <hr class="dropdown-divider">
@@ -194,12 +185,12 @@
                                     <span class="light-text" data-filter-match>Business Analyst</span>
                                 </div>
                                 <div class="flex-table-cell" data-th="Role">
-                                    <span class="light-text" data-filter-match>Member</span>
+                                    <span class="light-text" data-filter-match>Normal</span>
                                 </div>
                                 <div class="flex-table-cell" data-th="Status">
-                                    <span class="tag is-rounded" data-filter-match>Offline</span>
+                                    <span class="tag is-rounded" data-filter-match>Active</span>
                                 </div>
-                                <div class="flex-table-cell" data-th="Relations">
+                                <div class="flex-table-cell" data-th="Orders">
                                     <div class="avatar-stack is-pushed-mobile">
                                         <div class="h-avatar is-small">
                                             <span class="avatar is-fake is-danger" data-user-popover="35">
@@ -296,7 +287,7 @@
                                     <span class="light-text" data-filter-match>Designer</span>
                                 </div>
                                 <div class="flex-table-cell" data-th="Role">
-                                    <span class="light-text" data-filter-match>Member</span>
+                                    <span class="light-text" data-filter-match>Normal</span>
                                 </div>
                                 <div class="flex-table-cell" data-th="Status">
                                     <span class="tag is-info is-rounded" data-filter-match>Frozen</span>

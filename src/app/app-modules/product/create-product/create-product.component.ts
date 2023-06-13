@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class CreateProductComponent {
   activeToggle: string = "";
   isPushed: string = "";
-  activeAvatar: string = "";
   activeFileInput: string = "is-hidden";
   activeFileEdit: string = "";
   activeFileBack: string = "is-hidden";
+  urls: string[] = [];
 
   constructor() { }
 
@@ -28,17 +28,17 @@ export class CreateProductComponent {
     }
   }
 
-  onEditPicture() {
-    this.activeFileBack = "";
-    this.activeAvatar = "is-hidden";
-    this.activeFileInput = "";
-    this.activeFileEdit = "is-hidden";
-  }
+  selectFiles(event: any) {
+    if(event.target.files) {
+      for(var i = 0; i < File.length; i++) {
+        var reader = new FileReader();
 
-  onBackPicture() {
-    this.activeFileBack = "is-hidden";
-    this.activeAvatar = "";
-    this.activeFileInput = "is-hidden";
-    this.activeFileEdit = "";
+        reader.readAsDataURL(event.target.files[i]);
+        
+        reader.onload = (event: any) => {
+          this.urls.push(event.target.result);
+        }
+      }
+    }
   }
 }
